@@ -4,10 +4,56 @@
     box-sizing: 0;
 }
 
-.container {}
 
-.home {}
 
+/****Début CSS header********/
+.header {
+    line-height: 100px;
+    width: 100vw;
+    /* margin: auto; */
+    /* padding: 20px 0; */
+}
+
+.header nav img {
+    width: 120px;
+    height: 50px;
+    opacity: 80%;
+    cursor: pointer;
+    padding-top: 20px;
+
+}
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 90px 0px 20px;
+}
+
+.header nav button {
+    background-color: #fff;
+    color: #2cb1ba;
+    padding: 10px;
+    width: 200px;
+    line-height: 20px;
+    border: 1px solid #2cb1ba;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+
+.header nav button:first-child {
+    margin-right: 30px;
+}
+
+.header div img {
+    width: 100vw;
+    height: 450px;
+    /* object-position: top; */
+    object-fit: cover;
+}
+
+/****Fin CSS page header********/
 /****Début CSS page HOME********/
 .container_offers {
     width: 1285px;
@@ -100,3 +146,96 @@
 }
 
 /****Fin CSS page offer********/
+/****Début CSS formulaire********/
+.formulaire form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: auto;
+}
+
+.formulaire h2 {
+    text-align: center;
+    color: rgb(110, 110, 110);
+    margin-bottom: 30px;
+}
+
+.content_a {
+    text-align: center;
+}
+
+.content_a a {
+    color: #2cb1ba;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.formulaire>form input::-webkit-input-placeholder {
+    color: black;
+    /*Change the placeholder color*/
+    opacity: 0.5;
+    /*Change the opacity between 0 and 1*/
+}
+
+.formulaire>form input[type=email] {
+    border: none;
+    border-bottom: 1px solid #fcced3;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.formulaire>form input[type=password] {
+    border: none;
+    border-bottom: 1px solid #fcced3;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.formulaire>form input[type=text] {
+    border: none;
+    border-bottom: 1px solid #fcced3;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.formulaire button,
+input {
+    outline: none;
+    cursor: pointer;
+}
+
+.formulaire div {
+    /* margin-top: 20px; */
+    padding: 10px;
+}
+
+.checkbox {
+    line-height: 20px;
+}
+
+.checkbox span {
+    color: #666;
+    line-height: 30px;
+}
+
+.formulaire div input[type=checkbox] {
+    margin-top: 20px;
+    transform: scale(2);
+    margin-right: 20px;
+    cursor: pointer;
+    height: 20px;
+}
+
+.formulaire form button {
+    background-color: #2cb1ba;
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/****Fin CSS page formulaire********/
