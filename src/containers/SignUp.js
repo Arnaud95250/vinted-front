@@ -1,30 +1,36 @@
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import { useState } from "react";
 import axios from 'axios';
 
-const SignUp = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
+const SignUp = ({ setUser }) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const fetchData = async () => {
-            try{
-                const reponse = await axios.post("https://lereacteur-vinted-api.herokuapp.com/user/login", { 
-                    email: email,
-                    username: name,
-                    phone: phone,
-                    password: password
-            });
-            console.log(reponse);
-            } catch (error){
-                console.log(error.message);
-            }
-        };
-        fetchData();
+  const history = useHistory();
+
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          username: username,
+          email: email,
+          phone: phone,
+          password: password,
+        }
+      );
+      if (response.data.token) {
+        setUser(response.data.token);
+        // Naviguer vers la home page
+        history.push("/");
+      }
+    } catch (error) {
+      console.log(error.message);
     }
+  };
 
     return(
         <div className="formulaire">
@@ -37,7 +43,7 @@ const SignUp = () => {
                 />
 
                 <input onChange={(event) => {
-                    setName(event.target.value)}} 
+                    setUsername(event.target.value)}} 
                     type="text" 
                     placeholder="Nom utilisateur" 
                 />

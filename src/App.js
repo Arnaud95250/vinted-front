@@ -15,7 +15,12 @@ import Login from'./containers/Login';
 import SignUp from'./containers/SignUp';
 
 function App() {
-    const [userToken, setUserToken] = useState();
+    const [userToken, setUserToken] = useState(Cookies.get("userToken" || null));
+    const [data, setData] = useState([]);
+
+    const setInfoData = (data) => {
+      setData(data);
+    }
 
     const setUser = (token) => { // fonction qui pemet de récuper et stocker le token dans un cookie (envoyé en paramettre aux enfant dans les route login et signUp)
       if (token) {
@@ -31,7 +36,7 @@ function App() {
     return (
       <div className="container">
         <Router>
-          <Header userToken={userToken} setUser={setUser}/>
+          <Header  setInfoData={setInfoData} userToken={userToken} setUser={setUser}/>
             <Switch>
                 <Route path="/login">
                   <Login setUser={setUser}/>
@@ -43,7 +48,7 @@ function App() {
                   <Offer/>
                 </Route>
                 <Route path="/">
-                  <Home/>
+                  <Home setInfoData={setInfoData} data={data}/>
                 </Route>
             </Switch>
           <Footer/>

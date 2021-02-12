@@ -27,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0px 90px 0px 20px;
+    width: 110vw;
 }
 
 .header nav button {
@@ -36,7 +37,7 @@
     width: 200px;
     line-height: 20px;
     border: 1px solid #2cb1ba;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
     outline: none;
     cursor: pointer;
@@ -44,6 +45,20 @@
 
 .header nav button:first-child {
     margin-right: 30px;
+}
+
+.header nav .button_deconneter {
+    background-color: #c2175b;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    width: 200px;
+    line-height: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
 }
 
 .header div img {
@@ -97,6 +112,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: #999;
+    text-decoration: none;
 }
 
 .offers span:nth-child(3) {

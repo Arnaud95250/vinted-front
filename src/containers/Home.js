@@ -2,8 +2,8 @@ import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-const Home = () => {
-    const [data, setData] = useState([]);
+const Home = ({setInfoData, data}) => {
+    // const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -13,8 +13,8 @@ const Home = () => {
                     // "https://vinted-le-reacteur.herokuapp.com/offer/offer_filter/"
                     "https://lereacteur-vinted-api.herokuapp.com/offers"
                 );
-                console.log(response.data);
-                setData(response.data);
+                // console.log(response.data);
+                setInfoData(response.data);
                 setIsLoading(false);
             } catch (error){
                 console.log(error.message);

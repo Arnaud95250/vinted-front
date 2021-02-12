@@ -10,7 +10,7 @@ const Login = ({setUser}) => {
     const history = useHistory();
 
     const handleSubmit = (event) => {
-        event.preventDefault();// permet de garder le formlaire rempli si il y a une erreur
+        event.preventDefault();// Permets de garder le formulaire rempli s'il y a une erreur
         const fetchData = async () => {
             try{
                 const reponse = await axios.post("https://lereacteur-vinted-api.herokuapp.com/user/login", { // chemin vers mon API ou je fais fais une methode POST pour identification d'un membre
@@ -45,7 +45,7 @@ const Login = ({setUser}) => {
                     placeholder="Mot de passe" 
                 />
 
-                <button type="submit">S'inscrire</button>
+                <button type="submit">Se connecter</button>
             </form>
             <div className="content_a">
                 <Link to="/signup">Pas encore de compte ? Inscrits-toi!</Link>
