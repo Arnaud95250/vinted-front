@@ -13,6 +13,7 @@ import Home from'./containers/Home';
 import Offer from'./containers/Offer';
 import Login from'./containers/Login';
 import SignUp from'./containers/SignUp';
+import Publish from'./containers/Publish';
 
 function App() {
     const [userToken, setUserToken] = useState(Cookies.get("userToken" || null));
@@ -43,6 +44,9 @@ function App() {
                 </Route>
                 <Route path="/signup">
                   <SignUp setUser={setUser}/>
+                </Route>
+                <Route path="/publish">
+                  <Publish setInfoData={setInfoData} data={data} setUser={setUser} userToken={userToken}/>
                 </Route>
                 <Route path="/product/:id">
                   <Offer/>

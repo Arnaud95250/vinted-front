@@ -255,3 +255,94 @@ input {
 }
 
 /****Fin CSS page formulaire********/
+
+
+
+
+
+
+
+
+
+
+
+
+.formulaire_publish form {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin: auto;
+}
+
+.formulaire_publish div {
+    border: solid 1px
+}
+
+.formulaire_publish h2 {
+    text-align: center;
+    color: rgb(110, 110, 110);
+    margin-bottom: 30px;
+}
+
+.formulaire_publish>form input::-webkit-input-placeholder {
+    color: black;
+    /*Change the placeholder color*/
+    opacity: 0.5;
+    /*Change the opacity between 0 and 1*/
+}
+
+.formulaire_publish>form input[type=email] {
+    border: none;
+    border-bottom: 1px solid #fcced3;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.formulaire_publish>form input[type=password] {
+    border: none;
+    border-bottom: 1px solid #fcced3;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.formulaire_publish>form input[type=text] {
+    border: none;
+    border-bottom: 1px solid #fcced3;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.formulaire_publish button,
+input {
+    outline: none;
+    cursor: pointer;
+}
+
+.formulaire_publish div {
+    /* margin-top: 20px; */
+    padding: 10px;
+}
+
+.formulaire_publish div input[type=checkbox] {
+    margin-top: 20px;
+    transform: scale(2);
+    margin-right: 20px;
+    cursor: pointer;
+    height: 20px;
+}
+
+.formulaire_publish form button {
+    background-color: #2cb1ba;
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.formulaire_publish form label {
+    margin-right: 20px;
+}
