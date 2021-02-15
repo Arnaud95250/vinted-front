@@ -48,37 +48,28 @@ const Header = ({setInfoData, data, setUser, userToken}) => {
 
   return(
     <div className="header">
-        <nav>
-          <Link to="/"><img src={logo} alt="logo"/></Link>
-
-
-
-             
-              <form onChange={checkFilter}>
-              <input
-                    onChange={(event) => setSearch(event.target.value)} // je recupère les caractère rentrée dans mon input
-                    type="text" 
-                    placeholder="Votre recherche"
-                />
-              </form>
-                
-     
-          
-
-
+      <nav>
+        <Link to="/"><img src={logo} alt="logo"/></Link>
+            <form onChange={checkFilter}>
+            <input
+                onChange={(event) => setSearch(event.target.value)} // je recupère les caractère rentrée dans mon input
+                type="text" 
+                placeholder="Votre recherche"
+              />
+            </form>
             {userToken ? (
-              <Link to="/login"><button className="button_deconneter" onClick={() => setUser(null)}>Se déconnecter</button></Link>
+              <div>
+                <Link to="/login"><button className="button_deconneter" onClick={() => setUser(null)}>Se déconnecter</button></Link>
+                <Link to="/publish"><button className="button_publish">Vends tes articles</button></Link>
+              </div>
             ) : (
               <div>
                   <Link to="/signup"><button>S'inscrire</button></Link>
                   <Link to="/login"><button>Se connecter</button></Link>
               </div>
             )}
-            <div className="filter"></div>
-          </nav>
-          <div>
-            <img src={hero} alt="hero"/>
-          </div>
+          <div className="filter"></div>
+        </nav>
     </div>
   )
 }

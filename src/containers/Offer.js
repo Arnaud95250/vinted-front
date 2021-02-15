@@ -28,7 +28,6 @@ const Offer = () => {
       return(
           <main className="body_offer">
             <div className="offer">
-                <Link to='/'>Go to Home</Link>
                 {isLoading ? (
                     <span>En cours de chargement... </span>
                     ) : ( 
@@ -37,19 +36,25 @@ const Offer = () => {
                                 <img src={data.product_image.secure_url}/>
                             </div>
                             <div className="offer_info">
-                                <div>
-                                    <span className="offer_price">{data.product_price}</span>
+                            <div className="topCard">
+                                    <p>{data.product_price} €</p>
+                                    {/* AFFICHE MES PRODUCTS_DETAILS : */}
                                     {data.product_details.map((elem, index) => {
-                                        return(
+                                        const keys = Object.keys(elem);
+                                        const elems = Object.values(elem);
+                                        return (
+                                        <div key={index}>
                                             <div>
-                                            <span>{elem.MARQUE}</span>
-                                            <span>{elem.ÉTAT}</span>
-                                            <span>{elem.COULEUR}</span>
-                                            <span>{elem.EMPLACEMENT}</span>
+                                                <span>{keys}</span>
+                                            </div>
+                                            <div>
+                                                <span>{elems}</span>
+                                            </div>
+                                            
                                         </div>
-                                        )
+                                        );
                                     })}
-                                </div>
+                                    </div>
                                 <hr/>
                                 <div>
                                     <p>{data.product_name}</p>

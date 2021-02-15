@@ -55,34 +55,3 @@ const Login = ({setUser}) => {
 }
 
 export default Login;
-
-
-
-
-
-
-
-
-
-
-// <div className="login">
-//             <div>
-//                 <h1>Se connecter</h1>
-//                 <form onSubmit={handleSubmit }> {/*formulaire d'authentification avec fonction onSubmit qui envoie les value des input à ma fonction handleSubmit via des paramettre (event)*/}
-//                     <input
-//                         onChange={(event) => setEmail(event.target.value)} // je recupère les caractère rentrée dans mon input
-//                         type="email" 
-//                         placeholder="Adresse email"
-//                         // value="brice@lereacteur.io"
-//                     />
-
-//                     <input 
-//                         onChange={(event) => setPassword(event.target.value)}
-//                         type="password" 
-//                         placeholder="Mot de passe" 
-//                     />
-
-//                     <button type="submit">Se connecter</button> 
-//                 </form>
-//             </div>
-//         </div>

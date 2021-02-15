@@ -35,7 +35,9 @@ const Home = ({setInfoData, data}) => {
                         <Link to={`/product/${elem._id}`}>
                             <div key={index} className="offers">
                                 <div>
-                                    <img src="https://res.cloudinary.com/lereacteur/image/upload/v1610363014/api/vinted/users/5ffc305a068f67f73652e9bd/avatar.jpg"/>
+                                    {elem.owner.account.avatar && (
+                                        <img src={elem.owner.account.avatar.secure_url} alt="" />
+                                    )}
                                     <span>{elem.owner.account.username}</span>
                                 </div>
                                 <img src={elem.product_image.secure_url}/>

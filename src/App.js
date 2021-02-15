@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 //Import des cpmponents*****************
 import Header from'./components/Header';
 import Footer from'./components/Footer';
+import Hero from'./components/Hero';
 
 //Import des containers(les pages)*****************
 import Home from'./containers/Home';
@@ -33,11 +34,10 @@ function App() {
       }
     };
 
-
     return (
       <div className="container">
         <Router>
-          <Header  setInfoData={setInfoData} userToken={userToken} setUser={setUser}/>
+          <Header  setInfoData={setInfoData} userToken={userToken} setUserToken={setUserToken} setUser={setUser}/>
             <Switch>
                 <Route path="/login">
                   <Login setUser={setUser}/>
@@ -46,12 +46,13 @@ function App() {
                   <SignUp setUser={setUser}/>
                 </Route>
                 <Route path="/publish">
-                  <Publish setInfoData={setInfoData} data={data} setUser={setUser} userToken={userToken}/>
+                  <Publish userToken={userToken}/>
                 </Route>
                 <Route path="/product/:id">
                   <Offer/>
                 </Route>
                 <Route path="/">
+                  <Hero/>
                   <Home setInfoData={setInfoData} data={data}/>
                 </Route>
             </Switch>
