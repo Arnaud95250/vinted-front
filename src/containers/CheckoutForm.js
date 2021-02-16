@@ -39,7 +39,6 @@ const CheckoutForm = ({title, amount}) => {
         <form onSubmit={handleSubmit}>
           <p>{title}</p>
           <p>{amount} €</p>
-          {/* Input avec le numéro de CB + CCV */}
           <CardElement />
           <button type="submit">Valider</button>
         </form>

@@ -1,7 +1,6 @@
 import logo from '../assets/img/logo.png'
-import hero from '../assets/img/hero.jpg'
 import {Link} from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios';
 
 const Header = ({setInfoData, data, setUser, userToken}) => {
