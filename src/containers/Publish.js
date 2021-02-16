@@ -1,10 +1,12 @@
 import axios from 'axios';
-import { useState } from "react";
-import {Link} from "react-router-dom";
+
+import { Redirect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 
-const Publish = ({setUser, setInfoData, userToken}) => {
+const Publish = ({userToken}) => {
+    const history = useHistory();
     const [file, setFile] = useState("")
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -15,6 +17,9 @@ const Publish = ({setUser, setInfoData, userToken}) => {
     const [lieu, setLieu] = useState("")
     const [prix, setPrix] = useState("")
     const [data, setData] = useState()
+
+    const [preview, setPreview] = useState();
+    const token = userToken;
 
 
     const handleSubmit = async (event) => {
@@ -30,37 +35,45 @@ const Publish = ({setUser, setInfoData, userToken}) => {
             formData.append("etat", etat);
             formData.append("lieu", lieu);
             formData.append("price", prix);
-            const token = userToken;
+            
+   
 
             const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/offer/publish",
                 formData,{headers: { authorization: `Bearer ${token}`}});
                     console.log(token);
                     console.log(response.data);
                     setData(response.data)
+                    if (response.data._id) {
+                        // Rediriger le user
+                        history.push(`/offer/${response.data._id}`);
+                      }
         } catch (error) {
             console.log(error.request);
         }
-        // console.log(file, title, description, marque, taille, couleur, etat, lieu, prix)
     };
-    // console.log(userToken);
 
-    return(
+
+    return token ? (
         <div className="formulaire_publish">
             <h2>Publier votre annonce</h2>
             <form onSubmit={handleSubmit}>
                 <div className="content_section_file">
+                <img src={preview} />
                     <div>
-                        <label>
+                        <label htmlFor="file">
                             <span>+</span>
                             <span>Ajouter une photo</span>
+                        </label>
                         <input
-                            onChange={(event) => setFile(event.target.files[0])}
+                            onChange={(event) => {
+                                setFile(event.target.files[0])
+                                setPreview(URL.createObjectURL(event.target.files[0]));
+                            }}
+                            id="file"
                             type="file" 
                             required
                         />
-                        </label>
                     </div>
-                    
                 </div>
                     
 
@@ -78,10 +91,8 @@ const Publish = ({setUser, setInfoData, userToken}) => {
                         <label>Décris ton article</label>
                         <input 
                             onChange={(event) => setDescription(event.target.value)}
-                            type="text" 
+                            type="tex" 
                             placeholder="ex: porté quelque fois, taille correctement "
-                            required
-
                         />
                     </div>
                 </div>
@@ -93,7 +104,6 @@ const Publish = ({setUser, setInfoData, userToken}) => {
                             onChange={(event) => setMarque(event.target.value)}
                             type="text" 
                             placeholder="ex: The North Face" 
-                            required
                         />
                     </div>
                     <div className="content_input_text">
@@ -118,7 +128,6 @@ const Publish = ({setUser, setInfoData, userToken}) => {
                             onChange={(event) => setEtat(event.target.value)}
                             type="text" 
                             placeholder="ex: Neuf avec étiquette" 
-                            required
                         />
                     </div>
                     <div className="content_input_text">
@@ -127,7 +136,6 @@ const Publish = ({setUser, setInfoData, userToken}) => {
                             onChange={(event) => setLieu(event.target.value)}
                             type="text" 
                             placeholder="ex: Paris" 
-                            required
                         />
                     </div>
                 </div>
@@ -139,19 +147,15 @@ const Publish = ({setUser, setInfoData, userToken}) => {
                             type="text" 
                             placeholder="ex: 100 €" 
                             required
-
                         />
                     </div>
                </div>
-     
-                
                     <button type="submit"><Link to="/">Ajouter votre annonce</Link></button>
-     
-
-                
             </form> 
         </div>
-    )
+    ) : (
+        <Redirect to={{pathname: "/login", state: { fromPublish: true }}}/>
+    );
 }
 
-export default Publish
+export default Publish;

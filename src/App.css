@@ -183,6 +183,10 @@
     color: black;
 }
 
+.offers_a {
+    text-decoration: none;
+}
+
 /****Fin CSS page HOME********/
 /****Début CSS page offer********/
 .body_offer {
@@ -394,6 +398,14 @@ input {
     display: none;
 }
 
+.content_section_file img {
+    height: 200px;
+    width: 270px;
+    z-index: 3;
+    position: absolute;
+    border: solid 0px w;
+}
+
 /* Fin Input file */
 /* Début Input text*/
 .content_section {
@@ -460,8 +472,19 @@ input {
 }
 
 .formulaire_publish form a {
-
     text-decoration: none;
     color: white;
+}
 
+.check_form {
+    width: 600px;
+    border: solid 1px;
+    margin: 0 auto;
+}
+
+.input_cb {
+    background: rgb(167, 167, 167);
+    /* width: 20%; */
+    margin: 0 auto;
+    height: 50px;
 }

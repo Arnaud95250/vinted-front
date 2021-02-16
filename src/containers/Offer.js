@@ -60,6 +60,10 @@ const Offer = () => {
                                     <p>{data.product_name}</p>
                                     <p>{data.product_description}</p>
                                 </div>
+
+                                <div>
+                                    <button><Link to={{ pathname: "/payment", state: data }}>Acheter</Link></button>
+                                </div>
                             </div>
                         </div>
                     )}

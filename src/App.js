@@ -15,6 +15,7 @@ import Offer from'./containers/Offer';
 import Login from'./containers/Login';
 import SignUp from'./containers/SignUp';
 import Publish from'./containers/Publish';
+import Payment from'./containers/Payment';
 
 function App() {
     const [userToken, setUserToken] = useState(Cookies.get("userToken" || null));
@@ -47,6 +48,9 @@ function App() {
                 </Route>
                 <Route path="/publish">
                   <Publish userToken={userToken}/>
+                </Route>
+                <Route path="/payment">
+                  <Payment userToken={userToken}/>
                 </Route>
                 <Route path="/product/:id">
                   <Offer/>
