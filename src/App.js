@@ -1,10 +1,17 @@
+//Import des fichier css***************************
 import './App.css';
+import './assets/css/home.css';
+import './assets/css/header.css';
+import './assets/css/hero.css';
+import './assets/css/offer.css';
+import './assets/css/form.css';
+//Import packages**********************************
 import React from "react";
 import {BrowserRouter as Router,  Switch,  Route,  Link} from "react-router-dom";
 import {useState} from 'react';
 import Cookies from "js-cookie";
 
-//Import des cpmponents*****************
+//Import des cpmponents***************************
 import Header from'./components/Header';
 import Footer from'./components/Footer';
 import Hero from'./components/Hero';
@@ -16,6 +23,7 @@ import Login from'./containers/Login';
 import SignUp from'./containers/SignUp';
 import Publish from'./containers/Publish';
 import Payment from'./containers/Payment';
+
 
 function App() {
     const [userToken, setUserToken] = useState(Cookies.get("userToken" || null));

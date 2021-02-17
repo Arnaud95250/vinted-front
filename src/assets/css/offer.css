@@ -1,0 +1,62 @@
+/****Début CSS page offer********/
+.body_offer {
+    background: rgb(219, 219, 219);
+}
+
+.offer {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.offer_content {
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.offer_content div img:first-child {
+    width: 400px;
+    height: 600px;
+    box-shadow: 0 0 2px grey;
+}
+
+.offer_info {
+    width: 340px;
+    background-color: white;
+    padding: 50px;
+    box-shadow: 0 0 2px grey;
+}
+
+.offer_price {
+    font-size: 24px;
+    line-height: 32px;
+    color: #111;
+}
+
+
+.topCard div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.topCard div span {
+    text-align: left;
+}
+
+.topCard p:first-child {
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.topCard span:last-child {
+    flex: 1 1;
+    color: #666666;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+
+/****Fin CSS page offer********/

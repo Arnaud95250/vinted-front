@@ -32,7 +32,7 @@ const Home = ({setInfoData, data}) => {
                         {data.offers.map((elem, index) => {
                             // console.log(elem.product_image.url);
                     return (
-                        <Link to={`/product/${elem._id}`} key={index}>
+                        <Link to={`/product/${elem._id}`} key={index} className="offers_a">
                             <div  className="offers">
                                 <div>
                                     {elem.owner.account.avatar && (
