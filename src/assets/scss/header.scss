@@ -1,0 +1,66 @@
+/****Début CSS header********/
+.header {
+    line-height: 100px;
+    width: 100%;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 90px 0px 20px;
+        width: 110vw;
+        img {
+            width: 120px;
+            height: 50px;
+            opacity: 80%;
+            cursor: pointer;
+            padding-top: 20px;
+        }
+        input {
+            background: rgb(221, 221, 221);
+            border:  none;
+            border-radius: 10px;
+            height: 30px;
+            margin: 40px 0px 0px 0px;
+            padding-left: 10px;
+        }
+        button {
+            background-color: #fff;
+            color: #2cb1ba;
+            padding: 10px;
+            width: 200px;
+            line-height: 20px;
+            border: 1px solid #2cb1ba;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+        }
+        button:first-child {
+            margin-right: 30px;
+        }
+        .button_publish {
+            background-color: #2cb1ba;
+            width: 200px;
+            line-height: 20px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .button_deconneter {
+            background-color: #c2175b;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px;
+            width: 200px;
+            line-height: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+        }
+    }   
+}
+/****Fin CSS header********/

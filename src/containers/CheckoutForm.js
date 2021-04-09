@@ -3,8 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-
-const CheckoutForm = ({title, amount}) => {
+const CheckoutForm = ({ title, amount }) => {
   const token = Cookies.get("userToken");
   const stripe = useStripe();
   const elements = useElements();
@@ -20,11 +19,14 @@ const CheckoutForm = ({title, amount}) => {
       });
 
       const stripeToken = stripeResponse.token.id;
-      const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/payment", {
-        stripeToken: stripeToken,
-        title: title,
-        amount: amount
-      });
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/payment",
+        {
+          stripeToken: stripeToken,
+          title: title,
+          amount: amount,
+        }
+      );
       console.log(response.status);
       if (response.status === 200) {
         setSucceeded("Paiement validé !");
@@ -35,7 +37,7 @@ const CheckoutForm = ({title, amount}) => {
   };
   return (
     <div className="check_form">
-        {!succeeded ? (
+      {!succeeded ? (
         <form onSubmit={handleSubmit}>
           <p>{title}</p>
           <p>{amount} €</p>
