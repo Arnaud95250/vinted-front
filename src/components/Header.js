@@ -1,4 +1,4 @@
-import logo from "../assets/img/Vinted_logo.png";
+import logo from "../assets/img/Vinted-logo.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
